@@ -10,9 +10,9 @@ router.get('/', async (req, res) => {
     const categoryData = await Category.findAll({
       include: [{ model: Product, as: 'products' }],
     });
-    res.status(200).json(categoryData);
+    res.status(200).json(categoryData); // successful status
   } catch (err) {
-    res.status(500).json(err);
+    res.status(500).json(err); // failed status
   }
 });
 
@@ -29,7 +29,7 @@ router.get('/:id', async (req, res) => {
       return;
     }
 
-    res.status(200).json(categoryData);
+    res.status(200).json(categoryData); // successful status
   } catch (err) {
     res.status(500).json(err);
   }
@@ -38,7 +38,7 @@ router.get('/:id', async (req, res) => {
 router.post('/', async (req, res) => {
   // create a new category
   try {
-    const categoryData = await Category.create(req.body);
+    const categoryData = await Category.create(req.body); //intakes what's in body for post route
 
     res.status(201).json(categoryData);
   } catch (err) {
@@ -60,7 +60,7 @@ router.put('/:id', async (req, res) => {
       res.status(404).json({ message: "No category found with that id!" });
       return;
     }
-    res.status(200).json(categoryData);
+    res.status(200).json(categoryData); // successful status
   } catch (err) {
     res.status(500).json(err);
   }
@@ -68,7 +68,20 @@ router.put('/:id', async (req, res) => {
 
 router.delete('/:id', async (req, res) => {
   // delete a category by its `id` value
-  
+  try {
+    const categoryData = await Category.destroy({
+      where: {
+        id: req.params.id,
+      },
+    });
+    if (!categoryData) {
+      res.status(404).json({ message: "No category found with that id!" }); // also returns if another attempt is made with the same id after a successful status
+      return;
+    }
+    res.status(200).json(categoryData); // successful status
+  } catch (err) {
+    res.status(500).json(err); // failed status
+  }
 });
 
 module.exports = router;
