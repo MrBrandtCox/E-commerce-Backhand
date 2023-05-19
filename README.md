@@ -27,7 +27,8 @@ This repository utilizes the [Insomnia](https://insomnia.rest/) application to i
 </br></br>
 
 ## `Mock-up`
-[Mock-up Img]()
+(error message with npm run seed)
+[Video Demonstration](https://app.screencastify.com/manage/videos/iQIZi4Omq1WpJtRBxHR3)
 
 ## `License`
 [MIT](https://github.com/MrBrandtCox/E-commerce-Backhand/blob/main/LICENSE)
