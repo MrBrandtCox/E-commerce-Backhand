@@ -28,7 +28,7 @@ This repository utilizes the [Insomnia](https://insomnia.rest/) application to i
 
 ## `Mock-up`
 (error message with npm run seed)
-[Video Demonstration](https://app.screencastify.com/manage/videos/iQIZi4Omq1WpJtRBxHR3)
+[Video Demonstration](https://drive.google.com/file/d/1dBpGDTj2hTvmK1dXYKnKjeFURJ8J8T88/view)
 
 ## `License`
 [MIT](https://github.com/MrBrandtCox/E-commerce-Backhand/blob/main/LICENSE)
